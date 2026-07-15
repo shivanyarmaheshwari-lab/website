@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shivanya Maheshwari | Portfolio</title>
+  <meta name="description" content="Personal portfolio of Shivanya Maheshwari, Grade 9 student at Cathedral and John Connon School, Mumbai." />
+  <style>
+    :root {
+      --navy: #18345c;
+      --blue: #337fc5;
+      --soft-blue: #eef8ff;
+      --ink: #26384d;
+      --muted: #66778c;
+      --line: #dce8f2;
+      --white: #ffffff;
+      --accent: #ffe4ec;
+      --accent-strong: #f4aabc;
+      --mint: #e6f8f1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #fff8fb 0%, #f3fbff 48%, #ffffff 100%);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      font-size: 1.05rem;
+      font-weight: 900;
+      letter-spacing: .01em;
+      color: var(--navy);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      color: #172b45;
+      font-size: .92rem;
+      font-weight: 650;
+    }
+
+    .nav-links a {
+      border-bottom: 2px solid transparent;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+      border-color: var(--blue);
+    }
+
+    main {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px 72px;
+    }
+
+    .hero {
+      min-height: 600px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
+      align-items: center;
+      gap: 56px;
+      padding: 72px 0 46px;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-weight: 850;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-size: .83rem;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      line-height: .96;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-subtitle {
+      margin-top: 22px;
+      font-size: clamp(1.22rem, 2.3vw, 1.75rem);
+      color: var(--blue);
+      font-weight: 800;
+    }
+
+    .hero-copy {
+      max-width: 650px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 6px;
+      font-weight: 800;
+      border: 1px solid var(--navy);
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 999px;
+      box-shadow: 0 10px 24px rgba(24, 52, 92, .12);
+    }
+
+    .button.secondary {
+      background: var(--white);
+      color: var(--navy);
+      border-color: var(--line);
+    }
+
+    .profile-card {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, .86);
+      padding: 28px;
+      border-radius: 24px;
+      box-shadow: 0 18px 44px rgba(24, 52, 92, .08);
+    }
+
+    .portrait {
+      aspect-ratio: 1 / 1;
+      border-radius: 28px;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 78% 24%, #f7c2d0 0 12%, transparent 13%),
+        linear-gradient(140deg, #ffffff 0%, #f8e8ef 40%, #dff4ff 100%);
+      display: grid;
+      place-items: center;
+      color: var(--navy);
+      font-size: clamp(4.5rem, 12vw, 7.5rem);
+      font-weight: 950;
+      letter-spacing: -0.08em;
+      margin-bottom: 20px;
+    }
+
+    .quick-facts {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .quick-facts li {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      border-top: 1px solid var(--line);
+      padding-top: 12px;
+      color: var(--muted);
+    }
+
+    .quick-facts strong {
+      color: var(--navy);
+    }
+
+    section {
+      padding: 72px 0 0;
+    }
+
+    .section-title {
+      color: var(--navy);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.05;
+      margin: 0 0 26px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 58px;
+      height: 4px;
+      background: var(--blue);
+      margin-top: 16px;
+      border-radius: 999px;
+    }
+
+    .panel {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 12px 32px rgba(24, 52, 92, .06);
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .panel h3 {
+      color: var(--navy);
+      margin: 0 0 10px;
+      font-size: 1.18rem;
+    }
+
+    .panel p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .highlight {
+      background: linear-gradient(135deg, var(--soft-blue), #fff7fa);
+      border-left: 4px solid var(--accent-strong);
+    }
+
+    .project {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, .72fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .project-badge {
+      background: linear-gradient(145deg, #ffffff 0%, #fff3f7 45%, #edf8ff 100%);
+      color: var(--navy);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-height: 280px;
+      box-shadow: 0 18px 42px rgba(24, 52, 92, .08);
+    }
+
+    .project-badge .big {
+      font-size: clamp(2.1rem, 5vw, 3.5rem);
+      line-height: .95;
+      font-weight: 950;
+      letter-spacing: -0.04em;
+    }
+
+    .project-badge p {
+      margin: 18px 0 0;
+      color: var(--muted);
+    }
+
+    .project-logo {
+      width: min(190px, 70%);
+      height: auto;
+      display: block;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 12px 22px rgba(24, 52, 92, .1));
+    }
+
+    .contact-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 24px;
+      padding: 30px;
+    }
+
+    .contact-box h2 {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .contact-box p {
+      margin: 6px 0 0;
+      color: #d7e6f3;
+    }
+
+    .contact-box .button {
+      background: var(--white);
+      color: var(--navy);
+      border-color: var(--white);
+      flex: 0 0 auto;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      text-align: center;
+      padding: 28px 24px;
+      background: var(--white);
+    }
+
+    @media (max-width: 840px) {
+      .nav {
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero,
+      .two-column,
+      .project {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 48px;
+        gap: 34px;
+      }
+
+      .contact-box {
+        display: block;
+      }
+
+      .contact-box .button {
+        margin-top: 20px;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#top">Shivanya Maheshwari</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#project">Project</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <div class="eyebrow">Grade 9 • Mumbai • Student Portfolio</div>
+        <h1 id="hero-title">Shivanya Maheshwari</h1>
+        <div class="hero-subtitle">Curious student, confident speaker, athlete, and young innovator.</div>
+        <p class="hero-copy">
+          I am a 14-year-old Grade 9 student at Cathedral and John Connon School in Mumbai.
+          My work sits at the intersection of communication, leadership, sport, and technology,
+          with a growing interest in building projects that are practical, thoughtful, and socially useful.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="#project">View My Project</a>
+          <a class="button secondary" href="mailto:shivanya.r.maheshwari@gmail.com">Get In Touch</a>
+        </div>
+      </div>
+
+      <aside class="profile-card" aria-label="Quick facts">
+        <div class="portrait" aria-hidden="true">SM</div>
+        <ul class="quick-facts">
+          <li><strong>School</strong><span>Cathedral and John Connon School</span></li>
+          <li><strong>Grade</strong><span>9</span></li>
+          <li><strong>Age</strong><span>14</span></li>
+          <li><strong>City</strong><span>Mumbai</span></li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">About</h2>
+      <div class="two-column">
+        <div class="panel">
+          <h3>Who I Am</h3>
+          <p>
+            I am an energetic, ambitious student who enjoys taking on challenges both inside and outside the classroom.
+            Whether I am preparing for a debate, participating in a Model United Nations conference, training in the pool,
+            or working with a team on court, I value discipline, clarity, and the ability to think on my feet.
+          </p>
+        </div>
+        <div class="panel highlight">
+          <h3>What Drives Me</h3>
+          <p>
+            I am especially drawn to ideas that combine communication, problem-solving, and real-world impact.
+            I like projects that make complex things easier for people to understand and use, especially when technology
+            can help communities in a direct and meaningful way.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="project">
+      <h2 class="section-title">Project Spotlight</h2>
+      <div class="project">
+        <div class="panel">
+          <h3>SkinSense</h3>
+          <p>
+            SkinSense is an AI-powered skin screening concept designed to support Koli fisherwomen and fishermen
+            who are regularly exposed to seawater, sun, humidity, and wet work. The project explores how a simple
+            app can help users upload or take a photo, answer basic follow-up questions, receive a screening summary,
+            and understand when to seek dermatological care.
+          </p>
+          <p style="margin-top: 16px;">
+            The goal is not to replace doctors, but to make early awareness, health guidance, and access to care easier,
+            especially for communities that may face barriers to specialist support.
+          </p>
+        </div>
+        <div class="project-badge">
+          <img class="project-logo" src="skinsense_logo.png" alt="SkinSense logo" />
+          <div class="big">SkinSense</div>
+          <p>AI screening support • public health awareness • accessible design</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact-box">
+        <div>
+          <h2>Contact</h2>
+          <p>For project inquiries, school opportunities, or collaboration.</p>
+        </div>
+        <a class="button" href="mailto:shivanya.r.maheshwari@gmail.com">shivanya.r.maheshwari@gmail.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Shivanya Maheshwari. Built as a personal academic portfolio.
+  </footer>
+</body>
+</html>
